@@ -276,6 +276,7 @@ section {
 .about-details-container {
     justify-content: center;
     flex-direction: column;
+    padding-top: 15%;
 }
 
 .about-containers, .about-details-container {
@@ -318,6 +319,7 @@ section {
 
 #experience {
     position: relative;
+    padding-top: 25%;
 }
 
 .experience-sub-title {
