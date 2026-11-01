@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collin Le</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Collin Le</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Collin Le</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./assets/IMG_0172.jpeg" alt="Collin Le Profile Picture">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title" title>Collin Le</h1>
+            <p class="section__text__p2">Software Engineering</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2"
+                    onclick="window.open('./assets/Collin Le Software Developer Resume.pdf')">
+                    Resume
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                    Contact
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="My Instagram Profile" class="icon"
+                    onclick="location.href='https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile'" />
+                <img src="./assets/github-mark/github-mark.png" alt="My GitHub Profile" class="icon"
+                    onclick="location.href='https://github.com/Lecol-q'" />
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <img src="./assets/experience.png" alt="Experience Icon" class="icon" />
+                        <h3>Location</h3>
+                        <p>Towson<br>Maryland</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="./assets/education.png" alt="Education Icon" class="icon" />
+                        <h3>Education</h3>
+                        <p>Towson University</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>I'm Collin Le, a Computer Science student at Towson University with a passion for building
+                        software and bringing ideas to life.
+                        My interest in development started with web development,
+                        where I discovered how rewarding it is to turn an idea into something people can interact with
+                        and use.<br><br>
+                        I enjoy working across the full stack, from designing user experiences and building interfaces
+                        to developing backend systems, working with databases, and integrating APIs.
+                        I'm particularly interested in creating applications that are both technically sound and
+                        genuinely useful.
+                        Whether I'm developing a full-stack application, experimenting with new technologies,
+                        or exploring lower-level concepts like memory management and data structures in C,
+                        I enjoy understanding how things work and finding ways to improve them.
+
+                        <br><br>
+                        I believe good software starts with the people who use it.
+                        My goal is to keep growing as a developer by building meaningful projects,
+                        challenging myself to learn new technologies, and collaborating with others.
+                        I'm always looking for opportunities to learn from experienced developers,
+                        contribute to a team, and turn ideas into something real.
+                    </p><br><br>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" onclick="location.href='./#experience'" />
+    </section>
+    <section id="projects">
+        <p class="section__text__p1">Explore What I've Built</p>
+        <h1 class="title">Featured Projects</h1>
+
+        <div class="project-grid">
+
+            <!-- Clashalytics -->
+            <div class="project-card">
+                <h2>Clashalytics</h2>
+
+                <div class="project-buttons">
+                    <a href="https://clashalytics.onrender.com/" class="btn btn-color-2 project-btn"
+                        aria-disabled="true">Live Demo</a>
+                    <a href="https://github.com/Lecol-q/Clashalytics" target="_blank"
+                        class="btn btn-color-2 project-btn">
+                        GitHub
+                    </a>
+                </div>
+
+                <div class="project-gif-container">
+                    <img src="./assets/clashalytics.gif" alt="Clashalytics application demonstration"
+                        class="project-gif">
+                </div>
+
+                <p class="project-description">
+                    Developed a full-stack web application that allows
+                    Clash Royale players to retrieve player statistics
+                    and manage their profiles. Integrated an external
+                    REST API with a Spring Boot backend and implemented
+                    user authentication and persistent data storage.
+                </p>
+
+                <div class="project-tags">
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>React</span>
+                    <span>JavaScript</span>
+                    <span>PostgreSQL</span>
+                    <span>REST API</span>
+                </div>
+            </div>
+
+            <!-- Bookie -->
+            <div class="project-card">
+                <h2>Bookie</h2>
+
+                <div class="project-buttons">
+                    <a href="https://bookie-dr9c.onrender.com/" target="_blank" class="btn btn-color-2 project-btn">
+                        Live Demo
+                    </a>
+                    <a href="https://github.com/roboJF/ReviewApp" target="_blank" class="btn btn-color-2 project-btn">
+                        GitHub
+                    </a>
+                </div>
+
+                <div class="project-gif-container">
+                    <img src="./assets/Bookie.png" alt="Bookie application demonstration" class="project-gif">
+                </div>
+
+                <p class="project-description">
+                    Collaborated with a team of four using Agile
+                    development practices to build a book review
+                    application. Implemented user authentication,
+                    book ratings, and review submissions with
+                    database integration to support user-generated content.
+                </p>
+
+                <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>SQLite</span>
+                    <span>Git</span>
+                    <span>Agile Development</span>
+                </div>
+            </div>
+
+            <!-- AI Discord Chatbot -->
+            <div class="project-card">
+                <h2>AI Discord Chatbot</h2>
+
+                <div class="project-buttons">
+                    <a href="https://github.com/Lecol-q/AI-Discord-Bot" target="_blank"
+                        class="btn btn-color-2 project-btn">
+                        GitHub
+                    </a>
+                </div>
+
+                <div class="project-gif-container">
+                    <img src="./assets/ai-discord.gif" alt="AI Discord chatbot demonstration" class="project-gif">
+                </div>
+
+                <p class="project-description">
+                    Developed an AI-powered Discord chatbot using
+                    JavaScript, the Discord API, and Ollama.
+                    Implemented real-time mention-based interactions,
+                    conversational context handling, error recovery,
+                    and safeguards for Discord message limitations.
+                </p>
+
+                <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>node.js</span>
+                    <span>Discord API</span>
+                    <span>Ollama</span>
+                    <span>AI Integration</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="other-projects">
+
+            <h2 class="other-projects-title">Other Projects</h2>
+
+            <div class="other-projects-grid">
+
+                <div class="other-project-card">
+                    <h3>Java P2P Messaging</h3>
+                    <p>
+                        Developed a peer-to-peer terminal messaging
+                        application using TCP sockets.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Java</span>
+                        <span>TCP Sockets</span>
+                    </div>
+                    <div class="other-project-buttons">
+                        <a href="https://github.com/Lecol-q/Peer2PeerMSG" target="_blank"
+                            class="btn btn-color-2 project-btn">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="other-project-card">
+                    <h3>Redis Cache</h3>
+                    <p>
+                        Explored in-memory data storage and caching concepts.
+                    </p>
+                    <div class="project-tags">
+                        <span>Redis</span>
+                        <span>C++</span>
+                    </div>
+                    <div class="other-project-buttons">
+                        <a href="https://github.com/Lecol-q/redis-server-cline" target="_blank"
+                            class="btn btn-color-2 project-btn">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="other-project-card">
+                    <h3>InTune</h3>
+                    <p>
+                        iOS dating app being developed by a team of five.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Swift</span>
+                        <span>SwiftUI</span>
+                        <span>iOS</span>
+                        <span>Agile Development</span>
+                    </div>
+                    <div class="other-project-buttons">
+                        <a href="https://github.com/Lecol-q/InTune" target="_blank" class="btn btn-color-2 project-btn">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="other-project-card">
+                    <h3>C Shell</h3>
+
+                    <p>
+                        Developed a command-line shell in C to explore
+                        process management, command execution, and
+                        low-level system programming.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>C</span>
+                        <span>Linux</span>
+                        <span>System Programming</span>
+                    </div>
+
+                    <div class="other-project-buttons">
+                        <a href="https://github.com/Lecol-q/Shell-in-C" target="_blank"
+                            class="btn btn-color-2 project-btn">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" onclick="location.href='./#contact'" />
+    </section>
+
+    <script src="script.js"></script>
+    <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./assets/mail.webp" alt="Email icon" class="icon contact-icon email-icon" />
+                <p><a href="mailto:examplemail@gmail.com">collin_le@outlook.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+                <p><a
+                        href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">LinkedIn</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Collin Le</p>
+    </footer>
+</body>
+
+</html>
