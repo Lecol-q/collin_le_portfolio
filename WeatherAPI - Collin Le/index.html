@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API | Collin Le</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="enter city name" spellcheck="false">
+            <button><img src="assets/search.png"></button>
+        </div>
+        <div class="weather">
+            <img src="assets/rain.png" class="weather-icon">
+            <div class="unit" id="toggle-unit">
+                <h1 class="temp">68°f</h1>
+            </div>
+            <h2 class="city">Maryland</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="assets/humidity.png">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="assets/wind.png">
+                    <div>
+                        <p class="wind">6 mph</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const apiKey = "568d2de31e7ae23b9582391599c3e570";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
+
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+        const weatherIcon = document.querySelector(".weather-icon");
+        const tempElement = document.querySelector(".temp");
+        const toggleBtn = document.querySelector("#toggle-unit");
+
+        toggleBtn.addEventListener("click", toggleUnit);
+
+        let currentTempF = null;
+        let showingFahrenheit = true;
+
+        async function checkWeather(city){
+            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+            var data = await response.json();
+
+            console.log(data);
+
+            currentTempF = data.main.temp;
+            showingFahrenheit = true;
+
+            document.querySelector(".city").innerHTML = data.name;
+            tempElement.innerHTML = Math.round(data.main.temp) + "°f";
+            document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+            document.querySelector(".wind").innerHTML = data.wind.speed + " mph";
+
+            
+            if(data.weather[0].main == "Clouds"){
+                weatherIcon.src = "assets/clouds.png";
+            }
+            else if(data.weather[0].main == "Clear"){
+                weatherIcon.src = "assets/clear.png";
+            }
+            else if(data.weather[0].main == "Rain"){
+                weatherIcon.src = "assets/rain.png";
+            }
+            else if(data.weather[0].main == "Drizzle"){
+                weatherIcon.src = "assets/drizzle.png";
+            }
+            else if(data.weather[0].main == "Mist"){
+                weatherIcon.src = "assets/mist.png";
+            }
+        }
+
+        function toggleUnit(){
+            if(currentTempF === null) return;
+
+            if(showingFahrenheit){
+                const tempC = (currentTempF - 32) * 5 / 9;
+                tempElement.innerHTML = Math.round(tempC) + "°c";
+            } else {
+                tempElement.innerHTML = Math.round(currentTempF) + "°f";
+            }
+
+            showingFahrenheit = !showingFahrenheit;
+        }
+
+        toggleBtn.addEventListener("click", toggleUnit);
+        searchBtn.addEventListener("click", ()=>{
+            checkWeather(searchBox.value);
+        });
+
+        checkWeather("California");
+    </script>
+</body>
+</html>
